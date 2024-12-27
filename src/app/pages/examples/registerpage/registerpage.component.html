@@ -1,0 +1,145 @@
+<!-- /*
+=========================================================
+* 4x4 Overlanders India - v1.0.0
+=========================================================
+
+* 
+* Copyright 2024 Sourav Paul AKA 23INFINI8Y (23infini8y@gmail.com)
+* Licensed under MIT
+
+* Coded by Sourav Paul AKA 23INFINI8Y
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */ -->
+<app-header></app-header>
+<div class="wrapper">
+  <div class="page-header">
+    <div class="page-header-image"></div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
+            <div class="square square-7" id="square7"></div>
+            <div class="square square-8" id="square8"></div>
+            <div class="card card-register">
+              <div class="card-header">
+                <img
+                  alt="Card image"
+                  class="card-img"
+                  src="assets/img/square1-red.png"
+                />
+
+                <h4 class="card-title">Register</h4>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <h6 class="text-blueGray-500 text-sm font-bold">Sign in with</h6>
+                </div>
+                <div class="btn-wrapper text-center">
+                  <button
+                    class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
+                    type="button"
+                    (click)="googleSignIn()"
+                  >
+                    <img alt="..." class="w-5 mr-1" src="assets/img/google.svg" />
+                    Google
+                  </button>
+                </div>
+                <hr class="mt-6 border-b-1 border-blueGray-300" />
+              </div>
+              <div class="text-center mb-3">
+                <h6 class="text-blueGray-500 text-sm font-bold">Or register with credentials</h6>
+              </div>
+              <div class="card-body">
+                <form class="form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                  <div
+                    class="input-group"
+                    [ngClass]="{ 'input-group-focus': focus === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-single-02"> </i>
+                      </div>
+                    </div>
+                    <input
+                    id="username" formControlName="username"
+                      class="form-control"
+                      placeholder="Full Name"
+                      type="text"
+                      (focus)="focus = true"
+                      (blur)="focus = false"
+                    />
+                  </div>
+                  <div
+                    class="input-group"
+                    [ngClass]="{ 'input-group-focus': focus1 === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-email-85"> </i>
+                      </div>
+                    </div>
+                    <input
+                    id="email" formControlName="email"
+                      class="form-control"
+                      placeholder="Email"
+                      type="text"
+                      (focus)="focus1 = true"
+                      (blur)="focus1 = false"
+                    />
+                  </div>
+                  <div
+                    class="input-group"
+                    [ngClass]="{ 'input-group-focus': focus2 === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-lock-circle"> </i>
+                      </div>
+                    </div>
+                    <input
+                    id="password" formControlName="password"
+                      class="form-control"
+                      placeholder="Password"
+                      type="text"
+                      (focus)="focus2 = true"
+                      (blur)="focus2 = false"
+                    />
+                  </div>
+                  <div class="form-check text-left">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" />
+
+                      <span class="form-check-sign"> </span> I agree to the
+                      <a href="javascript:void(0)"> terms and conditions </a> .
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button 
+                  class="btn btn-danger btn-round btn-lg"
+                  type="submit" [disabled]="!registerForm.valid"
+                >
+                  Get Started
+                </button >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="register-bg"></div>
+        <div class="square square-1" id="square1"></div>
+        <div class="square square-2" id="square2"></div>
+        <div class="square square-3" id="square3"></div>
+        <div class="square square-4" id="square4"></div>
+        <div class="square square-5" id="square5"></div>
+        <div class="square square-6" id="square6"></div>
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+
+</div>
